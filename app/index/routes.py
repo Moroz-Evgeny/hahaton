@@ -6,4 +6,8 @@ ind = Blueprint('ind', __name__)
 
 @ind.route('/main')
 def index():
-    return render_template('index.html')
+    if session['userLogged']:
+        return render_template('index.html')
+    else:
+        flash('Войдите или зарегистрируйтесь')
+        return redirect(url_for('main.register'))

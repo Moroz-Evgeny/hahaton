@@ -22,12 +22,24 @@ def register():
         session['userReg'] = True
         return redirect(url_for('main.register'))
     
-    return render_template('register.html', userReg= 'userReg' in session)
+    return render_template('register.html', userReg = 'userReg' in session)
 
+@main.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email_']
+        password = request.form['pass']
 
-# Обработка ошибки 403
-@main.errorhandler(403)
-def forbidden_error(error):
-    flash('Доступ запрещён! Ошибка 403.')
-    return render_template('index.html')
+        user = User.query.filter_by(email=email, password=password).first()
+
+        if user:
+            session['userLogged'] = True
+            return redirect(url_for('ind.index'))
+        else:
+            flash('Сначала зарегистрируйтесь')
+            return redirect(url_for(main.register))
+    session['userReg'] = True
+    return redirect(url_for('main.register'))
+    
+
 
