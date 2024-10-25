@@ -57,5 +57,6 @@ form {
 	border: none;	
 	background: none;
 	padding: 0;
-	cursor: pointer;		
+	cursor: pointer;	
+	font-size: 10px;	
 }
