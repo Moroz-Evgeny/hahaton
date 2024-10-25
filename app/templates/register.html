@@ -7,6 +7,9 @@
     <title>Register</title>
 </head>
 <body>
+    {% if userReg %}
+        
+    {% else %}
         <main>
             <div class="container">
                 <form id='reg_form' action="/" method="post" >
@@ -18,6 +21,6 @@
                 </form>
             </div>
         </main>
-        <script src="{{url_for('static',filename='main.js')}}"></script>
+    {% endif %}
 </body>
 </html>
