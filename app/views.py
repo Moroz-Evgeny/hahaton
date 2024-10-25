@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def index():
     try:
-        return render_template('index.html', userName=session['userName'], userLogged='userLogged' in session)
+        return render_template('index.html')
     except KeyError:
         return render_template('index.html')
 
