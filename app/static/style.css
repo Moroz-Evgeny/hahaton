@@ -1,19 +1,36 @@
 body { 
 	background-color: #ffffff;
 	color: #000000;
+	margin: 0;
+	background-image: url(../static/images/background.jpg);
+	background-blend-mode: color;
+	background-color: #ffffffb0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-position-y:top;
 }
 
 .container{
 	max-width: 1200px;
-	margin: auto;	
+	margin: auto;
+	margin-top: 100px;	
 }
 
 .form__div {
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: center;	
 	gap: 30px;
+	outline: solid 16px;
+	outline-color: #0cb300;
+	max-width: 300px;
+	padding: 20px;
+	margin: auto;
+	border-radius: 10px;
+	background-color: #fff;
+	
 }
 
 form {
@@ -32,22 +49,26 @@ form {
 	border: none;
 	width: 200px;
 	height: 50px;
-	box-shadow: 0.5px 0.5px 0.5px 0;
+	box-shadow: 0.7px 0.7px 0.7px 0;
 	border-radius: 5px;
 	padding: 0 10px;
+	background-color: #f6f6f6;
 
 }
 
 .btn {
 	border: none;
 	background: linear-gradient(to right, #0cb300, #00ffc8);
-	background-size: 300px;
+	background-size: 300%;
 	color: #fff;
 	box-shadow: 1px 1px 1px 0;
 	border-radius: 5px;
 	padding: 5px 10px;
 	cursor: pointer;
-	transition: all 0.7s ease;}
+	width: 200px;
+	transition: all 0.7s ease;
+}
+	
 
 .btn:hover {	
 	background-position: right;
