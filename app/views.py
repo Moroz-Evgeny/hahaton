@@ -6,7 +6,6 @@ main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET', 'POST'])
 def register():
-
     if request.method == 'POST':
         login = request.form['log']
         email = request.form['email_']
@@ -16,15 +15,15 @@ def register():
         if user:
             flash('Пользователь с таким email уже зарегистрован')
             return redirect(url_for('main.register'))
+        
         new_user = User(login=login, email=email, password=password)
 
         db.session.add(new_user)
         db.session.commit()
 
-        session['userReg'] = True
-        return redirect(url_for('main.register'))
+        return redirect(url_for('main.login'))
     
-    return render_template('register.html', userReg = 'userReg' in session)
+    return render_template('register.html')
 
 @main.route('/login', methods=['GET', 'POST'])
 def login():
@@ -41,9 +40,8 @@ def login():
             flash('Сначала зарегистрируйтесь')
             return redirect(url_for('main.register'))
         
+    return render_template('login.html')
 
-    session['userReg'] = True
-    return redirect(url_for('main.register'))
 
     
 
