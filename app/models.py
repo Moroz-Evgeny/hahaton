@@ -14,3 +14,9 @@ class User(db.Model):
     password = db.Column(db.String, nullable=False)
     photo = db.Column(db.String, default=convert_image_to_base64('app/static/images/default.webp'), nullable=True)
 
+class Products(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    product = db.Column(db.String)
+    ratio = db.Column(db.Float)
+    
+
