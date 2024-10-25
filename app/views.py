@@ -15,10 +15,12 @@ def register():
         user = User.query.filter_by(email=email).first()
         if user:
             flash('Пользователь с таким email уже зарегистрован')
+            return redirect(url_for('main.register'))
         new_user = User(login=login, email=email, password=password)
 
         db.session.add(new_user)
         db.session.commit()
+
         session['userReg'] = True
         return redirect(url_for('main.register'))
     
@@ -37,9 +39,12 @@ def login():
             return redirect(url_for('ind.index'))
         else:
             flash('Сначала зарегистрируйтесь')
-            return redirect(url_for(main.register))
+            return redirect(url_for('main.register'))
+        
+
     session['userReg'] = True
     return redirect(url_for('main.register'))
+
     
 
 
