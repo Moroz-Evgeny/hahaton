@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
-    <title>Register</title>
-</head>
-<body>    
-        <main>
-            <div class="container">
-                <div class="form__div">
-                    <img class="logo" src="../static/images/centrinvest-logotic.png" alt="Центр-Инвест">
-                    <form id='reg_form' action="/" method="post" >
-                        <input class="input_" type="text" name="log" id="login_" placeholder="Ф. И. О." required>
-                        <input class="input_" type="email" name="email_" id="email_" placeholder="Почта" required>
-                        <input class="input_" type="password" id="password" name="pass" placeholder="Пароль" required>   
-                        <div>
-                            <button class="btn" type="submit"><p>Зарегистрироваться</p></button>                            
-                        </div>                       
-                    </form>
-                    <button class="href" method="GET" onclick="location.href='/login'"><p>Вход</p></button>
-                </div>                
-            </div>
-        </main>    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+		<title>Register</title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages(with_categories=true) %} {% if
+		messages %} {% for category, message in messages %}
+		<div class="flash-message {{ category }}">{{ message }}</div>
+		{% endfor %} {% endif %} {% endwith %}
+
+		<main>
+			<div class="container">
+				<div class="form__div">
+					<img
+						class="logo"
+						src="../static/images/centrinvest-logotic.png"
+						alt="Центр-Инвест"
+					/>
+					<form id="reg_form" action="/" method="post">
+						<input
+							class="input_"
+							type="text"
+							name="log"
+							id="login_"
+							placeholder="Ф. И. О."
+							required
+						/>
+						<input
+							class="input_"
+							type="email"
+							name="email_"
+							id="email_"
+							placeholder="Почта"
+							required
+						/>
+						<input
+							class="input_"
+							type="password"
+							id="password"
+							name="pass"
+							placeholder="Пароль"
+							required
+						/>
+						<div>
+							<button class="btn" type="submit">
+								<p>Зарегистрироваться</p>
+							</button>
+						</div>
+					</form>
+					<button class="href" method="GET" onclick="location.href='/login'">
+						<p>Вход</p>
+					</button>
+				</div>
+			</div>
+		</main>
+		<script>
+			// Найдем все элементы с классом flash-message
+			const flashMessages = document.querySelectorAll('.flash-message')
+
+			// Скрыть уведомление через 3 секунды
+			flashMessages.forEach(message => {
+
+				setTimeout(() => {
+					message.classList.add('fade-out') // Добавляем класс для плавного исчезновения
+				}, 2000) // Через 3 секунды
+
+				// Полностью удалить элемент через 4 секунды (после завершения анимации)
+				setTimeout(() => {
+					message.remove()
+				}, 3000) // Через 4 секунды (1 секунда на завершение анимации)
+			})
+		</script>
+	</body>
 </html>

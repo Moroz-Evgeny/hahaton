@@ -13,7 +13,7 @@ def register():
 
         user = User.query.filter_by(email=email).first()
         if user:
-            flash('Пользователь с таким email уже зарегистрован')
+            flash('Пользователь с таким email уже зарегистрован', 'warning')
             return redirect(url_for('main.register'))
         
         new_user = User(login=login, email=email, password=password)
@@ -37,7 +37,7 @@ def login():
             session['userLogged'] = True
             return redirect(url_for('ind.index'))
         else:
-            flash('Сначала зарегистрируйтесь')
+            flash('Сначала зарегистрируйтесь', 'warning')
             return redirect(url_for('main.register'))
         
     return render_template('login.html')
