@@ -27,8 +27,8 @@ def register():
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        email = request.form['email_']
-        password = request.form['pass']
+        email = request.form['email_log']
+        password = request.form['pass_log']
 
         user = User.query.filter_by(email=email, password=password).first()
 
