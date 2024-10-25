@@ -6,7 +6,7 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def index():
     try:
-        return render_template('index.html')
+        return render_template('register.html')
     except KeyError:
         return render_template('index.html')
 
