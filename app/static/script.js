@@ -53,7 +53,7 @@ function MouseOver() {
 	document.getElementById("menu_id").style.width= "4%";
 	document.getElementById("chart").style.width="50px";
 	document.getElementById("profile").style.width="50px";
-	document.getElementById("calculator").style.width="50px";
+	document.getElementById("exit").style.width="50px";
 	document.getElementById("notification").style.width="50px";
 	document.getElementById("settings").style.width="50px";
 	document.getElementById("arrow").style.rotate="90deg";
@@ -66,7 +66,7 @@ function MouseLeave() {
 	document.getElementById("menu_id").style.width= "1%";
 	document.getElementById("chart").style.width="0px";
 	document.getElementById("profile").style.width="0px";
-	document.getElementById("calculator").style.width="0px";
+	document.getElementById("exit").style.width="0px";
 	document.getElementById("notification").style.width="0px";
 	document.getElementById("settings").style.width="0px";
 	document.getElementById("arrow").style.rotate="0deg";

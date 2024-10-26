@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+		<title>Homeeeeee</title>
+	</head>
+	<body id="body">
+		<div class="background"></div>
+		<main class="diagramm__sec">
+			<nav class="menu"  >
+				<div class="menu_container" id="menu_id" onmouseenter="MouseOver()" onmouseleave="MouseLeave()">
+					<img id="arrow" class="arrow" src="../static/images/arrow2.png" alt="">
+					<div class="menu_wrap">
+						<button class="menu_btn" onclick="location.href='/main'"><img id="chart" src="../static/images/chart.png" alt=""></button>
+                    	<button class="menu_btn"  onclick="location.href='/profile'"><img id="profile" src="../static/images/profile.png" alt=""></button>
+                    	<button class="menu_btn"  onclick="location.href='#!'"><img id="notification" src="../static/images/notification.png" alt=""></button>
+                    	<button class="menu_btn"  onclick="location.href='#!'"><img id="settings" src="../static/images/settings.png" alt=""></button>
+                        <button class="menu_btn" onclick="location.href='/logout'"><img id="exit" src="../static/images/reject.png" alt=""></button>
+					</div>					
+				</div>				
+			</nav>		
+		</main>
+		
+    	
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+	</body>
+</html>
