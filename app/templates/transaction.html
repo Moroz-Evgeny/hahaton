@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+    <title>Transaction</title>
+</head>
+<body>
+    <main>
+        <div class="background"></div>
+        <div class="container">
+            <form id="trans_form" action="/new_transaction" method="post">                
+                <input class='input_' name="title_product" type="text" placeholder="Введите товар" required>
+                <input class='input_' name="count_product" type="number" placeholder="Введите кол-во товара" readonly>
+                <button type="submit" class="btn"><p>Отправить</p></button>
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
