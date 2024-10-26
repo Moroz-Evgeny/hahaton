@@ -43,11 +43,12 @@ def login():
         user = User.query.filter_by(email=email, password=password).first()
 
         if user:
+            session['userEmail'] = email
             session['userLogged'] = True
             session['userName'] = transliterate(user.login)
             session['userId'] = user.id
 
-            return redirect(url_for('ind.index'))
+            return redirect(url_for('trans.new_transaction'))
         else:
             flash('Сначала зарегистрируйтесь', 'warning')
             return redirect(url_for('main.register'))

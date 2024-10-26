@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	var carbon_ratio = JSON.parse(ratioStr) // Преобразуем строку в массив
 
 	var chartTooltip = document.getElementById('toolTip').getContext('2d')
-	var chlen = [1,4,15,1,512]
 	var toolTip = new Chart(chartTooltip, {
 		type: 'line',
 		data: {
