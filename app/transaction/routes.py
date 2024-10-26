@@ -18,6 +18,6 @@ def new_transaction():
       db.session.add(new_transaction)
       db.session.commit()
 
-      return redirect(url_for('trans.newtransaction'))
+      return redirect(url_for('trans.new_transaction'))
 
     return render_template('transaction.html')

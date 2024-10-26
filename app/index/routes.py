@@ -8,7 +8,7 @@ ind = Blueprint('ind', __name__)
 def index(userName, userId):
     if session['userLogged']:
         user_ratio = Transaction.query.filter_by(user_id=session['userId']).all()
-        date = [str(i.date).split(' ')[0] for i in user_ratio]
+        date = [str(i.date).split(' ')[0].replace('-', '.') for i in user_ratio]
         ratio = [i.carbon_ratio for i in user_ratio]
 
         print(date, ratio)
