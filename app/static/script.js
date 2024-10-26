@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const container = document.querySelector('.container_')
-	// Получаем данные из атрибутов
-	var dateStr = container.dataset.date.replace(/'/g, '"') // Заменяем одинарные кавычки на двойные
-	var ratioStr = container.dataset.ratio.replace(/'/g, '"') // Заменяем одинарные кавычки на двойные
+	const container = document.querySelector('.container_')	
+	var dateStr = container.dataset.date.replace(/'/g, '"') 
+	var ratioStr = container.dataset.ratio.replace(/'/g, '"') 
 
-	var date = JSON.parse(dateStr) // Преобразуем строку в массив
-	var carbon_ratio = JSON.parse(ratioStr) // Преобразуем строку в массив
+	var date = JSON.parse(dateStr) 
+	var carbon_ratio = JSON.parse(ratioStr) 
 
 	var chartTooltip = document.getElementById('toolTip').getContext('2d')
 	var toolTip = new Chart(chartTooltip, {
@@ -42,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 	})
 	var el= document.getElementById('carbon_id')
-	el.innerHTML += `${carbon_ratio[carbon_ratio.length - 1]} кг CO₂e`
+	el.innerHTML += `${carbon_ratio[carbon_ratio.length - 1].toFixed(3)} кг CO₂e`
 	console.log('date:', date)
 	console.log('carbon_ratio:', carbon_ratio)
 })

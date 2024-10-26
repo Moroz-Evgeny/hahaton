@@ -275,8 +275,7 @@ form {
 	border-bottom: solid #D7D7D7;
 	border-right: solid #d7d7d7;
 	border-width: 8px;
-	margin-bottom: 20px;
-	
+	margin-bottom: 20px;	
 }
 .diagramm canvas {
 	padding: 20px;
@@ -304,7 +303,7 @@ form {
 	border-right: solid #D7D7D7;
 	border-width: 8px;
 	margin-top: 100px;
-	margin-right: 50px;
+	margin-right: 66px;
 }
 
 .title {
@@ -356,4 +355,17 @@ form {
 
 #exit {
 	margin-top: 160%;
+}
+
+.prof {
+	padding-top: 60px;
+}
+
+.prof_card {
+	display: flex;
+	background:#fff;
+	max-width: 800px;
+	margin: auto;
+	padding: 30px;
+	border-radius:20px;
 }
