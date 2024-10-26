@@ -18,7 +18,9 @@ def create_app():
     from app.transaction.routes import trans
     from app.api import api
     from app.profile.routes import prof
+    from app.setting.routes import setting
 
+    app.register_blueprint(setting)
     app.register_blueprint(prof)
     app.register_blueprint(api)
     app.register_blueprint(trans)
