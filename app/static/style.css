@@ -387,10 +387,13 @@ input[type="file"] {
 	width: 285px;
 	height: 285px;
 	border-radius: 100%;
+	margin: 0 auto;	
 }
 
 .logo_profile img {
-
+	left: 50%;
+  	margin-left: -250px;
+  	position: absolute;
 }
 
 .logo_change {
