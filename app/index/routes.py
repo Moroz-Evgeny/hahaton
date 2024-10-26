@@ -4,15 +4,15 @@ from app.models import User, Transaction
 
 ind = Blueprint('ind', __name__)
 
-@ind.route('/main-<userName>_<userId>')
-def index(userName, userId):
-    if session['userLogged']:
+@ind.route('/main')
+def index():
+    if 'userLogged' in session:
         user_ratio = Transaction.query.filter_by(user_id=session['userId']).all()
         date = [str(i.date).split(' ')[0].split('-')[2] + '.' + str(i.date).split(' ')[0].split('-')[1] for i in user_ratio]
         ratio = [i.carbon_ratio for i in user_ratio]
 
         print(date, ratio)
-        return render_template('index.html', date=date, ratio=ratio,userName=userName, userId=userId)
+        return render_template('index.html', date=date, ratio=ratio)
     else:
         flash('Войдите или зарегистрируйтесь', 'warning')
         return redirect(url_for('main.register'))

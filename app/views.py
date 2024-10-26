@@ -47,7 +47,7 @@ def login():
             session['userName'] = transliterate(user.login)
             session['userId'] = user.id
 
-            return redirect(url_for('ind.index', userName=session['userName'], userId=session['userId']))
+            return redirect(url_for('ind.index'))
         else:
             flash('Сначала зарегистрируйтесь', 'warning')
             return redirect(url_for('main.register'))
@@ -58,7 +58,6 @@ def login():
 @main.route('/logout')
 def logout():
     session.clear()
-    session['userLogged'] = False
     return redirect(url_for('main.login'))
     
 
