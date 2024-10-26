@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-body { 
-	font-family: "Montserrat", sans-serif;
-	
-	background-color: #ffffff;
+body {
+	font-family: 'Montserrat', sans-serif;
 	color: #000000;
-	margin: 0;	
-	
+	margin: 0;
 	position: relative;
 	overflow: hidden;
 }
 
-body::before{
-	content:"";
+body::before {
+	content: '';
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -20,16 +17,16 @@ body::before{
 	height: 100%;
 	background-image: url(../static/images/background.jpg);
 	background-position: center top;
-	background: repeat;
+	background-repeat: repeat;
 	background-size: cover;
-	filter: blur(2px);
-	z-index: -1;
+	filter: blur(1px); /* Устанавливаем степень размытия */
+	z-index: -1; /* Отправляем фоновое изображение на задний план */
 }
 
-.container{
+.container {
 	max-width: 1200px;
 	margin: auto;
-	margin-top: 100px;	
+	margin-top: 100px;
 }
 
 .form__div {
@@ -37,16 +34,16 @@ body::before{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;	
+	justify-content: center;
 	gap: 30px;
 	border: 5px solid;
 	border-radius: 18px;
 	border-image: linear-gradient(90deg, #0cb300, #00ffc8);
-	border-image-slice: 1;		
+	border-image-slice: 1;
 	max-width: 300px;
 	padding: 20px;
-	margin: auto;	
-	background-color: #fff;	
+	margin: auto;
+	background-color: #fff;
 	animation: colorTrans 1.5s ease-in-out infinite;
 }
 
@@ -81,13 +78,12 @@ form {
 	border: none;
 	width: 200px;
 	height: 50px;
-	
+
 	border-radius: 20px;
 	padding: 0 10px;
 	background-color: #f6f6f6;
 	border: solid #888888;
 	border-width: 1.5px;
-
 }
 
 .btn {
@@ -95,48 +91,45 @@ form {
 	background: linear-gradient(to right, #0cb300, #00ffc8);
 	background-size: 300%;
 	color: #fff;
-	border: solid;	
+	border: solid;
 	border-radius: 20px;
 	padding: 5px 10px;
 	cursor: pointer;
 	width: 200px;
 	transition: all 0.7s ease;
 }
-	
 
-.btn:hover {	
+.btn:hover {
 	background-position: right;
 }
 
 .href {
-	border: none;	
+	border: none;
 	background: none;
 	padding: 0;
-	cursor: pointer;	
+	cursor: pointer;
 	font-size: 10px;
 	margin: 0;
-	position: relative;	
+	position: relative;
 	text-decoration: none;
 	line-height: 0;
 }
 
-
-.flash-message{
+.flash-message {
 	color: #333;
 	width: 200px;
 	text-align: center;
-	position:absolute;
-	top:10px;
+	position: absolute;
+	top: 10px;
 	font-size: 10px;
-	background:#f6f6f6;
+	background: #f6f6f6;
 	box-shadow: 1px 1px 1px 0 #000000;
 	border: none;
 	padding: 20px;
 	border-radius: 20px;
 	opacity: 0.99;
-	transition: all 0.5s ease-out;	
+	transition: all 0.5s ease-out;
 	left: 10px;
-
 }
 
 .fade-out {
@@ -165,25 +158,25 @@ form {
 .href p:hover {
 	color: #0cb300;
 }
-  
-  .href p::before {
-	content: "";
+
+.href p::before {
+	content: '';
 	position: absolute;
 	display: block;
 	width: 100%;
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background:#0cb300;
+	background: #0cb300;
 	transform: scaleX(0);
 	transition: transform 0.3s ease;
-  }
-  
-  .href p:hover::before {
-	transform: scaleX(1);
-  }
+}
 
-  .rectangle {
+.href p:hover::before {
+	transform: scaleX(1);
+}
+
+.rectangle {
 	position: absolute;
 	width: 400px;
 	height: 1300px;
@@ -191,12 +184,12 @@ form {
 	rotate: -45deg;
 	outline: solid #0cb300;
 	outline-width: 40px;
-	top:150px;
+	top: 150px;
 	left: 50px;
-  }
+}
 
-.rec2 {		
+.rec2 {
 	height: 1300px;
 	top: -500px;
 	left: 1400px;
-  }
+}
