@@ -13,7 +13,7 @@ class User(db.Model):
     login = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
-    photo = db.Column(db.String, default=convert_image_to_base64('app/static/images/default.webp'), nullable=True)
+    photo = db.Column(db.String, default=convert_image_to_base64('app/static/images/default.png'), nullable=True)
 
 class Products(db.Model):
     id = db.Column(db.Integer, primary_key=True)

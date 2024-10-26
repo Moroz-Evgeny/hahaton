@@ -6,8 +6,9 @@ prof = Blueprint('prof', __name__)
 @prof.route('/profile')
 def profile():
   if 'userLogged' in session:
-    userLogin = User.query.filter_by(email=session['userEmail']).first().login
-    return render_template('profile.html', userLogin=userLogin, userEmail=session['userEmail'], userId=session['userId'])
+    userLogin = User.query.filter_by(email=session['userEmail']).first()
+
+    return render_template('profile.html', userLogin=userLogin.login, userEmail=session['userEmail'], userId=session['userId'], userPhoto=userLogin.photo)
   
   flash('Войдите или зарегистрируйтесь', 'warning')
   return redirect(url_for('main.register'))
