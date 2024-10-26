@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 	})
 	var el= document.getElementById('carbon_id')
-	el.innerHTML = `<p>${carbon_ratio[carbon_ratio.length - 1]}</p>`
+	el.innerHTML += `${carbon_ratio[carbon_ratio.length - 1]} кг CO₂e`
 	console.log('date:', date)
 	console.log('carbon_ratio:', carbon_ratio)
 })
