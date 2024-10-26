@@ -382,18 +382,16 @@ input[type="file"] {
 }
 
 .logo_profile {
-	position: relative;
-	overflow: hidden;
-	width: 285px;
-	height: 285px;
-	border-radius: 100%;
-	margin: 0 auto;	
+	text-align: center;
+	margin-bottom: 20px;
+
 }
 
 .logo_profile img {
-	left: 50%;
-  	margin-left: -250px;
-  	position: absolute;
+	width: 285px;
+	height: 285px;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 .logo_change {

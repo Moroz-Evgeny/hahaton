@@ -25,4 +25,4 @@ class Transaction(db.Model):
     carbon_ratio = db.Column(db.Float, nullable=True)
     date = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
+    transaction_id = db.Column(db.Integer)

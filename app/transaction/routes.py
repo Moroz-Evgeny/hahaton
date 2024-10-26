@@ -7,17 +7,13 @@ trans = Blueprint('trans', __name__)
 
 @trans.route('/new_transaction', methods=['GET', 'POST'])
 def new_transaction():
-
     email = session['userEmail']
-
-    # Получаем информацию о покупателе по email
     api_url = f'http://localhost:5000/purchasers?email={email}'
 
     try:
         response = requests.get(api_url)
         response.raise_for_status()
         purchaser_data = response.json()
-
         purchaser_id = purchaser_data['id']
 
         # Получаем чеки покупателя
@@ -26,40 +22,41 @@ def new_transaction():
         receipts_response.raise_for_status()
         receipts = receipts_response.json()
 
-        total_carbon_ratio = 0
-
-        # Обработка каждого чека
         for receipt in receipts:
+            transaction_id = receipt['id']
             date = receipt['date']
+
+            # Проверяем наличие транзакции по user_id и transaction_id
+            existing_transaction = Transaction.query.filter_by(transaction_id=transaction_id, user_id=session['userId']).first()
+
+            if existing_transaction:
+                print(f'Чек с ID {transaction_id} уже загружен для пользователя {session["userId"]}.')
+                continue
+
+            total_carbon_ratio = 0  # Сбрасываем сумму углеродного коэффициента для каждого нового чека
+
             for item in receipt['items']:
                 product = item['name']
                 count = item['count']
-                
+
                 # Получаем коэффициент углерода для товара из базы данных
                 product_entry = Products.query.filter_by(product=product).first()
                 if product_entry:
                     carbon_ratio = count * product_entry.ratio
                     total_carbon_ratio += carbon_ratio
-            try:
-                tr = Transaction.query.get(Transaction.query.filter_by(date=date, user_id = session['userId']).first().id)
-                if tr:
-                    tr.carbon_ratio += carbon_ratio
-                    db.session.commit()
-            except:
-                new_transaction = Transaction(
-                    carbon_ratio=total_carbon_ratio,
-                    user_id=session['userId'],
-                    date=date
-                )
 
-                db.session.add(new_transaction)
-                db.session.commit()
+            # Добавляем новую транзакцию для данного чека
+            new_transaction = Transaction(
+                carbon_ratio=total_carbon_ratio,
+                user_id=session['userId'],
+                date=date,
+                transaction_id=transaction_id
+            )
+            db.session.add(new_transaction)
+            db.session.commit()
 
-        
         return redirect(url_for('ind.index'))
 
     except requests.exceptions.RequestException as e:
         flash(f"Ошибка при обращении к API: {e}", 'error')
         return redirect(url_for('ind.index'))
-
-

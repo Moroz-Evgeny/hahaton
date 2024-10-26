@@ -15,15 +15,19 @@ def index():
 
         filtered_date = []
         filtered_ratio = []
+        filtered_ratio_dict = {}
 
         for i in range(len(date)):
             if int(dat[0]) >= int(date[i].split('.')[0]) and int(dat[1]) == int(date[i].split('.')[1]):
                 filtered_date.append(date[i])
-                filtered_ratio.append(ratio[i])
+                filtered_ratio_dict[date[i]] = ratio[i]
             else:
                 continue
-
-        return render_template('index.html', date=sorted(filtered_date[::-1]), ratio=sorted(filtered_ratio[::-1]))
+        filtered_date = sorted(filtered_date)
+        for i in filtered_date:
+            filtered_ratio.append(filtered_ratio_dict[i])
+        
+        return render_template('index.html', date=filtered_date, ratio=filtered_ratio)
     else:
         flash('Войдите или зарегистрируйтесь', 'warning')
         return redirect(url_for('main.register'))

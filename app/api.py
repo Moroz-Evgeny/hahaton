@@ -41,7 +41,14 @@ purchasers = {
 					"items": [{ "name": "Свинина", "count": 2.0, "price": 25.0 }],
 					"date": "24.10.2024",
 					"total_price": 85.0
-				}
+				},
+                				{
+					"id": "6",
+					"time": "1729686754",
+					"items": [{ "name": "Хлопок", "count": 116.0, "price": 64.5 }],
+					"date": "21.10.2024",
+					"total_price": 402.99
+				},
 			]
 		},
 		"example2@example2.ru": {
@@ -126,7 +133,7 @@ purchasers = {
 				{
 					"id": "5",
 					"time": "1729686755",
-					"items": [{ "name": "Свинина", "count": 5.0, "price": 25.0 }],
+					"items": [{ "name": "Свинина", "count": 20.0, "price": 25.0 }],
 					"date": "24.10.2024",
 					"total_price": 85.0
 				}
