@@ -8,17 +8,50 @@
 	</head>
 	<body id="body">
 		<div class="background"></div>
-		<main>
-			<nav class="menu">
-				<img src="" alt="dasdas">
-				<button onclick="location.href='/new_transaction'"><img src="" alt="calculate"></button>
-			</nav>
-			<div class="container">
+		<main class="diagramm__sec">
+			<nav class="menu"  >
+				<div class="menu_container" id="menu_id" onmouseenter="MouseOver()" onmouseleave="MouseLeave()">
+					<img id="arrow" class="arrow" src="../static/images/arrow2.png" alt="">
+					<div class="menu_wrap">
+						<button class="menu_btn" onclick="location.href='/main'"><img id="chart" src="../static/images/chart.png" alt=""></button>
+                    	<button class="menu_btn"  onclick="location.href='/#!'"><img id="profile" src="../static/images/profile.png" alt=""></button>
+                    	<button class="menu_btn"  onclick="location.href='/new_transaction'"><img id="calculator" src="../static/images/calculator.png" alt=""></button>
+                    	<button class="menu_btn"  onclick="location.href='#!'"><img id="notification" src="../static/images/notification.png" alt=""></button>
+                    	<button class="menu_btn"  onclick="location.href='#!'"><img id="settings" src="../static/images/settings.png" alt=""></button>
+					</div>
+					
+				</div>
 				
-			</div>
-			 <main>
-				<div><canvas id="toolTip" aria-label="chart" height="350" width="350"></canvas></div>
-			 </main>
+			</nav>
+			<section class="main_sec">
+				<div class="diag">
+					<main class="diagramm">
+						<div><canvas id="toolTip" aria-label="chart" height="350" width="600"></canvas></div>
+					 </main>
+					 <div class="carbon__">
+						<p>Углеродный след сегодня составил</p>
+						<p id="carbon_id"></p>
+					</div>
+				</div>	
+				
+				<div class="dailyAct">
+					<div class="dailyTab">
+						<div class="title">
+							<img src="../static/images/aim.png" alt="">
+							<h3>Ваши достижения</h3>
+						</div>
+						<ul class="activity_list">
+							<li>
+								<img src="../static/images/tick.png" alt="">
+								<div class="li_"><p>Задание</p></div>
+								
+							</li>
+						</ul>
+						
+					</div>
+				</div>				
+			</section>
+					 
 
 			<div
 				class="container_"
