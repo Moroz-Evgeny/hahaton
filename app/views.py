@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, session, flash, redirect, url_for
 from app.models import User, Products
 from app import db
+from app.translit import transliterate
 
 main = Blueprint('main', __name__)
 
@@ -43,7 +44,10 @@ def login():
 
         if user:
             session['userLogged'] = True
-            return redirect(url_for('ind.index'))
+            session['userName'] = transliterate(user.login)
+            session['userId'] = user.id
+
+            return redirect(url_for('ind.index', userName=session['userName'], userId=session['userId']))
         else:
             flash('Сначала зарегистрируйтесь', 'warning')
             return redirect(url_for('main.register'))
