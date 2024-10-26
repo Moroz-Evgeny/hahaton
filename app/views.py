@@ -51,6 +51,11 @@ def login():
     return render_template('login.html')
 
 
+@main.route('/logout')
+def logout():
+    session.clear()
+    session['userLogged'] = False
+    return redirect(url_for('main.login'))
     
 
 

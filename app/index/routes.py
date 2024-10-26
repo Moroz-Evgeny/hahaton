@@ -9,5 +9,5 @@ def index():
     if session['userLogged']:
         return render_template('index.html')
     else:
-        flash('Войдите или зарегистрируйтесь')
+        flash('Войдите или зарегистрируйтесь', 'warning')
         return redirect(url_for('main.register'))
