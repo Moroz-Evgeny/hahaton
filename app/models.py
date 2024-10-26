@@ -22,9 +22,7 @@ class Products(db.Model):
 
 class Transaction(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    product = db.Column(db.String, nullable=False)
-    quantity = db.Column(db.String, nullable=False)
     carbon_ratio = db.Column(db.Float, nullable=True)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
+    date = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

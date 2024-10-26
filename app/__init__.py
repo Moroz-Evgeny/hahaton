@@ -16,7 +16,9 @@ def create_app():
     from app.views import main
     from app.index.routes import ind
     from app.transaction.routes import trans
+    from app.api import api
 
+    app.register_blueprint(api)
     app.register_blueprint(trans)
     app.register_blueprint(ind)
     app.register_blueprint(main)
