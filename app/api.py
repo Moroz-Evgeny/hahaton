@@ -13,7 +13,7 @@ purchasers = {
                 "items": [
                     {"name": "Хлопок", "count": 10.0, "price": 64.50},
                 ],
-                "date": "26.10.2024",
+                "date": "21.10.2024",
                 "total_price": 402.99
             },
             {
@@ -22,7 +22,7 @@ purchasers = {
                 "items": [
                     {"name": "Свинина", "count": 5.0, "price": 25.00}
                 ],
-                "date": "23.10.2024",
+                "date": "20.10.2024",
                 "total_price": 85.00
             }, 
             {
@@ -31,7 +31,7 @@ purchasers = {
                 "items": [
                     {"name": "Хлопок", "count": 15.0, "price": 64.50},
                 ],
-                "date": "26.10.2024",
+                "date": "22.10.2024",
                 "total_price": 402.99
             },
                         {
@@ -40,7 +40,7 @@ purchasers = {
                 "items": [
                     {"name": "Свинина", "count": 11.0, "price": 25.00}
                 ],
-                "date": "21.10.2024",
+                "date": "23.10.2024",
                 "total_price": 85.00
             }, 
                         {
@@ -49,7 +49,7 @@ purchasers = {
                 "items": [
                     {"name": "Свинина", "count": 2.0, "price": 25.00}
                 ],
-                "date": "20.10.2024",
+                "date": "24.10.2024",
                 "total_price": 85.00
             }, 
         ]

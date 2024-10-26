@@ -41,7 +41,7 @@ def new_transaction():
                         carbon_ratio = count * product_entry.ratio
                         total_carbon_ratio += carbon_ratio
                 try:
-                    tr = Transaction.query.get(Transaction.query.filter_by(date=date).first().id)
+                    tr = Transaction.query.get(Transaction.query.filter_by(date=date, user_id = session['userId']).first().id)
                     if tr:
                         tr.carbon_ratio += carbon_ratio
                         db.session.commit()

@@ -22,9 +22,8 @@ def index():
                 filtered_ratio.append(ratio[i])
             else:
                 continue
-        print(filtered_ratio, filtered_date)
 
-        return render_template('index.html', date=filtered_date, ratio=filtered_ratio)
+        return render_template('index.html', date=sorted(filtered_date[::-1]), ratio=sorted(filtered_ratio[::-1]))
     else:
         flash('Войдите или зарегистрируйтесь', 'warning')
         return redirect(url_for('main.register'))
