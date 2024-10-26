@@ -8,6 +8,8 @@ body {
 	overflow: hidden;
 }
 
+
+
 body::before {
 	content: '';
 	position: fixed;
@@ -23,6 +25,11 @@ body::before {
 	background-size: 1600px;
 	filter: blur(1px); /* Устанавливаем степень размытия */
 	z-index: -1; /* Отправляем фоновое изображение на задний план */
+}
+
+#body::before {
+	background-image: none;
+	background-color: #fff;
 }
 
 .container {
@@ -208,3 +215,5 @@ form {
 		border-image-source: linear-gradient(45deg, #0cb300, #00ff44);
 	}
 }
+
+
