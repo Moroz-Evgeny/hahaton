@@ -1,4 +1,5 @@
 import base64
+from datetime import datetime
 from sqlalchemy import JSON
 from app import db
 
@@ -18,5 +19,12 @@ class Products(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product = db.Column(db.String)
     ratio = db.Column(db.Float)
-    
+
+class Transaction(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    product = db.Column(db.String, nullable=False)
+    quantity = db.Column(db.String, nullable=False)
+    carbon_ratio = db.Column(db.Float, nullable=True)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

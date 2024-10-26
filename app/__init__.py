@@ -15,7 +15,9 @@ def create_app():
     # Регистрация Blueprints
     from app.views import main
     from app.index.routes import ind
+    from app.transaction.routes import trans
 
+    app.register_blueprint(trans)
     app.register_blueprint(ind)
     app.register_blueprint(main)
 
