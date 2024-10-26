@@ -11,29 +11,30 @@ setting = Blueprint('setting', __name__)
 def settings():
   if 'userLogged' in session:
     if request.method == 'POST':
-      if 'photo' in request.files:
+      try:
+        if 'photo' in request.files:
 
-        file = request.files['photo']
-        filename = secure_filename(file.filename)
-        photo = os.path.join('uploads', filename)
-        file.save(photo)
-        conv_photo = convert_image_to_base64(photo)
+          file = request.files['photo']
+          filename = secure_filename(file.filename)
+          photo = os.path.join('uploads', filename)
+          file.save(photo)
+          conv_photo = convert_image_to_base64(photo)
 
-        # Добавление фото в бд User
-        user = User.query.get(session['userId'])
-        print(photo)
-        user.photo = conv_photo
-        db.session.commit()
-      if 'nameUser' in request.form:
-        userName = request.form['nameUser']
+          # Добавление фото в бд User
+          user = User.query.get(session['userId'])
+          print(photo)
+          user.photo = conv_photo
+          db.session.commit()
+        if 'nameUser' in request.form:
+          userName = request.form['nameUser']
 
-        user = User.query.get(session['userId'])
-        user.login = userName
-        db.session.commit()
+          user = User.query.get(session['userId'])
+          user.login = userName
+          db.session.commit()
 
-
-
-      return redirect(url_for('setting.settings'))
+        return redirect(url_for('setting.settings'))
+      except:
+        return redirect(url_for('setting.settings'))
 
 
     userLogin = User.query.filter_by(email=session['userEmail']).first()
