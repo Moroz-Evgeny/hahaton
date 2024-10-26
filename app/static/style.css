@@ -358,14 +358,59 @@ form {
 }
 
 .prof {
-	padding-top: 60px;
+	padding-top: 150px;
 }
 
 .prof_card {
 	display: flex;
+	flex-direction: row;
 	background:#fff;
 	max-width: 800px;
 	margin: auto;
 	padding: 30px;
 	border-radius:20px;
+}
+
+input[type="file"] {		
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+}
+
+.change_img {
+	display: flex;
+}
+
+.logo_profile {
+	position: relative;
+	overflow: hidden;
+	width: 285px;
+	height: 285px;
+	border-radius: 100%;
+}
+
+.logo_profile img {
+
+}
+
+.logo_change {
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+}
+
+.prof_text .btn {
+	height: 50px;
+}
+
+.user_name {
+	border: none;
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	border-radius: 20px;
+	padding: 0 8px;
+	background-color: #f6f6f6;
+	border: solid #888888;
+	border-width: 1.5px;
 }

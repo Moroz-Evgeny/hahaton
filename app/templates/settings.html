@@ -22,15 +22,21 @@
 				</div>				
 			</nav>	
             <section class="prof">
-                <div class="prof_card">
-                    <img src="data:image/jpeg;base64, {{userPhoto}}" alt="">                    
+                <form action="/settings" method="post" class="prof_card">
+                    <div class="change_img">
+                        <div class="logo_profile">
+                            <img  src="data:image/jpeg;base64, {{userPhoto}}" alt="">
+                        </div>                           
+                        <input class="logo_change" id="file" name="photo" type="file" accept="image/*"><label class="logo_change" for="file"><img src="../static/images/pencil.png" alt=""></label>
+                    </div>                                     
                     <div class="prof_text">
                         <h1>Информация о пользователе</h1>
-                        <p>Имя пользователя: {{userLogin}}</p>
+                        <input type="text" placeholder="Изменить имя" class="user_name" name="nameUser" value="{{userLogin}}">                        
                         <p>Почта: {{userEmail}}</p>
                         <p>ID: {{userId}}</p>
+                        <button type="submit" name="set_btn" class="btn">Сохранить</button>
                     </div>                    
-                </div>
+                </form>
             </section>	           
 		</main>
 
