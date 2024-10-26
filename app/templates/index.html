@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
-    <title>Homeeeeee</title>
-</head>
-<body id="body">    
-    <div class="background"></div>
-    <main>
-        <div class="container">
-            
-        </div>
-    </main>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+		<title>Homeeeeee</title>
+	</head>
+	<body id="body">
+		<div class="background"></div>
+		<main>
+			<div
+				class="container_"
+				data-date="{{ data['date'] }}"
+				data-ratio="{{ data['carbon_ratio'] }}"
+			></div>
+		</main>
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+	</body>
 </html>
