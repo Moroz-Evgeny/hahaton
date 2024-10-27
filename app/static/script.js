@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	el.innerHTML += `${carbon_ratio[carbon_ratio.length - 1].toFixed(3)} кг CO₂e`
 	console.log('date:', date)
 	console.log('carbon_ratio:', carbon_ratio)
+	
 })
 
 

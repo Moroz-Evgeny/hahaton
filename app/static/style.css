@@ -9,6 +9,16 @@ body {
 	scrollbar-width: 0;
 }
 
+li {
+	max-width: 500px;
+	margin-bottom: 20px;
+}
+
+
+.li_ {
+	max-width: 300px;
+}
+
 a {
 	margin: 0;
 }
