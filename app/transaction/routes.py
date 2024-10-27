@@ -30,7 +30,6 @@ def new_transaction():
             existing_transaction = Transaction.query.filter_by(transaction_id=transaction_id, user_id=session['userId']).first()
 
             if existing_transaction:
-                print(f'Чек с ID {transaction_id} уже загружен для пользователя {session["userId"]}.')
                 continue
 
             total_carbon_ratio = 0  # Сбрасываем сумму углеродного коэффициента для каждого нового чека

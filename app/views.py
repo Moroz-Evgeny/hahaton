@@ -7,13 +7,6 @@ main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET', 'POST'])
 def register():
-    # for i in  open("C:/Users/ROG/Downloads/Telegram Desktop/carbon_step.csv"):
-    #     product = [j for j in i.split(';')][0]
-    #     ratio = float([j.replace('\n', '').replace(',', '.') for j in i.split(';')][1])
-    #     new = Products(product=product, ratio=ratio)
-
-    #     db.session.add(new)
-    # db.session.commit()
     
     if request.method == 'POST':
         login = request.form['log']
@@ -60,6 +53,8 @@ def login():
 def logout():
     session.clear()
     return redirect(url_for('main.login'))
+
+
     
 
 

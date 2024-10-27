@@ -26,7 +26,6 @@ def index():
         filtered_date = sorted(filtered_date)
         for i in filtered_date:
             filtered_ratio.append(filtered_ratio_dict[i])
-        print(filtered_date, filtered_ratio)
         return render_template('index.html', date=filtered_date, ratio=filtered_ratio)
     else:
         flash('Войдите или зарегистрируйтесь', 'warning')
