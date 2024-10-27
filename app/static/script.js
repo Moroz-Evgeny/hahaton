@@ -51,10 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	var daily_count = 3;
 	let daily_list = [ "Провести расчет своего углеродного следа", "Оставить меньшее кол-во углеродного следа по сравнению с предыдущим днём", "Углеродный след за день составил менее 300 кг co2"]
 	var tick = '1';
+	const today = new Date();
+	const day = String(today.getDate()).padStart(2, '0'); // Добавляем ведущий ноль, если нужно
+	const month = String(today.getMonth() + 1).padStart(2, '0'); // Месяцы начинаются с 0
+
+	const formattedDate = `${day}.${month}`;
+	
+	
 	for (var i =0;i < daily_list.length;i++) {
 		var act = document.createElement('li')
 		act.className = "act";
-		if (i == 0 && carbon_ratio != []) {
+		
+		if (i == 0 && formattedDate in carbon_ratio) {
 			tick= '2'
 			
 		}
