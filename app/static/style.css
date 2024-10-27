@@ -356,7 +356,7 @@ form {
 }
 
 #exit {
-	margin-top: 160%;
+	margin-top: 450%;
 }
 
 .prof {
@@ -456,7 +456,7 @@ input[type="file"] {
 
 	.prof_card {
 		flex-direction: column;
-		max-width: 310px;
+		max-width: 3100px;
 		
 	}
 
@@ -529,25 +529,25 @@ input[type="file"] {
 		position:fixed;
 		width: 3%;
 		height: 2%;
-		margin: 10px 0 0 92px ;	
+		margin: 10px 0 0 2% ;	
 		border-width: 4px;	
 	}
 
 
 	.diagramm {
 		margin-top: 50px;
-		max-width: 300px;
+		max-width: 500px;
 	}
 	.dailyTab {
 		margin-top: 0px;
-		max-width: 300px;
+		width: 400px;
 		margin: auto;
 		margin-bottom: 20px;
 	}
 
 
 	.carbon__ {
-		max-width: 300px;
+		width: 400px;
 		margin: auto;
 	}
 
@@ -557,7 +557,7 @@ input[type="file"] {
 
 	.prof_card {
 		flex-direction: column;
-		max-width: 310px;
+		max-width: 490px;
 		
 	}
 

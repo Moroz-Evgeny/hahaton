@@ -68,7 +68,7 @@ function MouseOver() {
 	document.getElementById("chart").style.width="50px";
 	document.getElementById("profile").style.width="50px";
 	document.getElementById("exit").style.width="50px";
-	document.getElementById("notification").style.width="50px";
+	
 	document.getElementById("settings").style.width="50px";
 	document.getElementById("arrow").style.rotate="90deg";
 	document.getElementById("arrow").style.width="30px";	
@@ -96,7 +96,7 @@ function MouseLeave() {
 	document.getElementById("chart").style.width="0px";
 	document.getElementById("profile").style.width="0px";
 	document.getElementById("exit").style.width="0px";
-	document.getElementById("notification").style.width="0px";
+	
 	document.getElementById("settings").style.width="0px";
 	document.getElementById("arrow").style.rotate="0deg";
 	document.getElementById("arrow").style.width="20px";	
