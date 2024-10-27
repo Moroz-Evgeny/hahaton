@@ -9,6 +9,10 @@ body {
 	scrollbar-width: 0;
 }
 
+a {
+	margin: 0;
+}
+
 ul {
 	list-style: none;
 }
@@ -364,6 +368,13 @@ form {
 	padding-top: 150px;
 }
 
+.centr_invest_log0 {
+	height: 60px;
+	position: absolute;
+	right: 20px;
+	padding: 10px;
+}
+
 .prof_card {
 	display: flex;
 	flex-direction: row;
@@ -435,6 +446,11 @@ input[type="file"] {
 		margin: 10px 0 0 10px ;	
 		border-width: 4px;	
 	}
+
+	.centr_invest_log0 {
+		height: 40px;
+	}
+
 
 	.diagramm canvas {		
 		width: 300px;
