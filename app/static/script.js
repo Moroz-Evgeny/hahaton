@@ -44,6 +44,31 @@ document.addEventListener('DOMContentLoaded', () => {
 	el.innerHTML += `${carbon_ratio[carbon_ratio.length - 1].toFixed(3)} кг CO₂e`
 	console.log('date:', date)
 	console.log('carbon_ratio:', carbon_ratio)
+	var daily_el = document.getElementById('daily__activ');
+	var act = document.createElement('li')
+	act.className = "act"
+	act.innerHTML = '<img src="../static/images/tick.png" alt=""><div class="li_"><p></p></div>'
+	var daily_count = 3;
+	let daily_list = [ "Провести расчет своего углеродного следа", "Оставить меньшее кол-во углеродного следа по сравнению с предыдущим днём", "Углеродный след за день составил менее 300 кг co2"]
+	var tick = '1';
+	for (var i =0;i < daily_list.length;i++) {
+		var act = document.createElement('li')
+		act.className = "act";
+		if (i == 0 && carbon_ratio != []) {
+			tick= '2'
+			
+		}
+		else if (i == 1 && carbon_ratio[carbon_ratio.length-1] < carbon_ratio[carbon_ratio.length-2]) {
+			tick='2'
+			
+		}	
+		else if (i==2 && carbon_ratio[carbon_ratio.length-1]<300){
+			tick="2";
+		}
+		act.innerHTML = `<img src="../static/images/tick${tick}.png" alt=""><div class="li_"><p>${daily_list[i]}</p></div>`;
+		daily_el.appendChild(act)
+		tick='1';
+	};
 	
 })
 
