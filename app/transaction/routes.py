@@ -58,5 +58,4 @@ def new_transaction():
         return redirect(url_for('ind.index'))
 
     except requests.exceptions.RequestException as e:
-        flash(f"Ошибка при обращении к API: {e}", 'error')
         return redirect(url_for('ind.index'))
