@@ -47,30 +47,59 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-function MouseOver() {
-	document.getElementById("menu_id").style.width= "4%";
+function MouseOver() {	
+	if (window.screen.availWidth <= 391){
+		document.getElementById("menu_id").style.width= "76%";
+		document.getElementById("menu_id").style.height= "76%";
+	}
+	if (window.screen.availWidth <= 375) {
+		document.getElementById("menu_id").style.height= "95%";
+		document.getElementById("menu_id").style.width= "95%";
+	}
+	if (window.screen.availWidth <= 414) {
+		document.getElementById("menu_id").style.height= "75%";
+		document.getElementById("menu_id").style.width= "75%";
+	}
+	if (window.screen.availWidth <= 530) {
+		document.getElementById("menu_id").style.height= "75%";
+		document.getElementById("menu_id").style.width= "75%";
+	}
+	document.getElementById("menu_id").style.width= "60px";
 	document.getElementById("chart").style.width="50px";
 	document.getElementById("profile").style.width="50px";
 	document.getElementById("exit").style.width="50px";
 	document.getElementById("notification").style.width="50px";
 	document.getElementById("settings").style.width="50px";
 	document.getElementById("arrow").style.rotate="90deg";
-	document.getElementById("arrow").style.width="30px";
-
-	
+	document.getElementById("arrow").style.width="30px";	
+	 
 }
 
-function MouseLeave() {
-	document.getElementById("menu_id").style.width= "1%";
+function MouseLeave() {	
+	if (window.screen.availWidth <= 391){		
+		document.getElementById("menu_id").style.height= "2%";
+		document.getElementById("menu_id").style.width= "3%";
+	}
+	if (window.screen.availWidth <= 375) {
+		document.getElementById("menu_id").style.height= "3%";
+		document.getElementById("menu_id").style.width= "3%";
+	}
+	if (window.screen.availWidth <= 415) {
+		document.getElementById("menu_id").style.height= "2.5%";
+		document.getElementById("menu_id").style.width= "4%";
+	}
+	if (window.screen.availWidth <= 531) {
+		document.getElementById("menu_id").style.height= "2%";
+		document.getElementById("menu_id").style.width= "3%";
+	}
+	document.getElementById("menu_id").style.width= "16px";	
 	document.getElementById("chart").style.width="0px";
 	document.getElementById("profile").style.width="0px";
 	document.getElementById("exit").style.width="0px";
 	document.getElementById("notification").style.width="0px";
 	document.getElementById("settings").style.width="0px";
 	document.getElementById("arrow").style.rotate="0deg";
-	document.getElementById("arrow").style.width="20px";
-
-	
+	document.getElementById("arrow").style.width="20px";	
 }
 
 
