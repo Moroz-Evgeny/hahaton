@@ -273,7 +273,7 @@ form {
 	background-color: #fff;
 	padding: 20px;
 	border-radius: 20px;
-	max-width: 600px;
+	width: 550px;
 	border-bottom: solid #D7D7D7;
 	border-right: solid #d7d7d7;
 	border-width: 8px;
@@ -281,6 +281,7 @@ form {
 }
 .diagramm canvas {
 	padding: 20px;
+	width: 570px;
 }
 
 
@@ -426,7 +427,7 @@ input[type="file"] {
 	}
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 431px) {
 	.menu_container {
 		position:fixed;
 		width: 4%;
@@ -435,68 +436,27 @@ input[type="file"] {
 		border-width: 4px;	
 	}
 
-	.diagramm {
-		max-width: 320px;
-	}
-	.dailyTab {
-		margin-top: 0px;
-		max-width: 320px;
-		margin: auto;
-		margin-bottom: 20px;
-	}
-
-	.carbon__ {
-		max-width: 320px;
-		margin: auto;
-	}
-
-	.diag{
-		padding-top: 10px;
-	}
-
-	.prof_card {
-		flex-direction: column;
-		max-width: 3100px;
-		
-	}
-
-	.prof {
-		align-items: center;
-		justify-content: center;
-		padding-top: 50px;
-	}
-
-	.new {
-		margin-left: 76px;
-	}
-
-	.prof_text {
-		margin-left: 50px;
-	}
-}
-
-@media screen and (max-width: 394px) {
-	.menu_container {
-		position:fixed;
-		width: 4%;
-		height: 2%;
-		margin: 10px 0 0 10px ;	
-		border-width: 4px;	
+	.diagramm canvas {		
+		width: 300px;
 	}
 
 	.diagramm {
-		max-width: 320px;
+		width: 300px;
 	}
-	.dailyTab {
-		margin-top: 0px;
-		max-width: 320px;
+	.dailyTab {		
+		max-width: 300px;
 		margin: auto;
-		margin-bottom: 20px;
+	}
+
+	#exit {
+		margin-bottom: 12px;
+		position: absolute;
+		bottom: 0;
+		right: 10px;
 	}
 
 	.carbon__ {
-		max-width: 320px;
-		margin: auto;
+		max-width: 300px;			
 	}
 
 	.diag{
@@ -524,6 +484,70 @@ input[type="file"] {
 	}
 }
 
+@media screen and (max-width: 394px) {
+	.menu_container {
+		position:fixed;
+		width: 6%;
+		height: 3%;
+		margin: 10px 0 0 10px ;	
+		border-width: 4px;	
+		z-index: 10000;
+	}
+
+	.diagramm {
+		width: 300px;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+	.dailyTab {
+		margin-top: 0px;
+		max-width: 300px;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+
+	.carbon__ {
+		max-width: 320px;
+		margin: auto;
+	}
+
+	.diag{
+		padding-top: 10px;
+	}
+
+	.prof_card {
+		flex-direction: column;
+		max-width: 310px;
+		padding: 40px;
+		margin-left: 25px;
+		
+		
+	}	
+
+	#exit {
+		margin-bottom: 12px;
+		position: absolute;
+		bottom: 0;
+		right: 10px;
+	}
+
+	.prof {
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		padding-top: 50px;			
+		
+	}
+
+	.new {
+		margin-left: 50%;
+	}
+
+	.prof_text {
+		margin-left: 50px;
+	}
+}
+
 @media screen and (max-width: 531px) {
 	.menu_container {
 		position:fixed;
@@ -544,7 +568,6 @@ input[type="file"] {
 		margin: auto;
 		margin-bottom: 20px;
 	}
-
 
 	.carbon__ {
 		width: 400px;

@@ -53,8 +53,8 @@ function MouseOver() {
 		document.getElementById("menu_id").style.height= "76%";
 	}
 	if (window.screen.availWidth <= 375) {
-		document.getElementById("menu_id").style.height= "95%";
-		document.getElementById("menu_id").style.width= "95%";
+		document.getElementById("menu_id").style.height= "70%";
+		document.getElementById("menu_id").style.width= "70%";
 	}
 	if (window.screen.availWidth <= 414) {
 		document.getElementById("menu_id").style.height= "75%";
